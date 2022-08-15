@@ -38,7 +38,7 @@ const SavedShows = () => {
 
   return (
     <>
-      <h2 className='text-white font-bold md:text-xl p-4'>My Shows</h2>
+      <h2 className='text-white font-bold md:text-xl pt-4 pb-2 pl-[4%]'>Saved Shows</h2>
       <div className='relative flex items-center group'>
         <MdChevronLeft
           onClick={slideLeft}
@@ -47,15 +47,15 @@ const SavedShows = () => {
         />
         <div
           id={'slider'}
-          className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative'
+          className='w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative pl-[4%]'
         >
           {movies.map((item) => (
             <div
               key={item.id}
-              className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'
+              className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative rounded mr-2'
             >
               <img
-                className='w-full h-auto block'
+                className='w-full h-auto block rounded'
                 src={`https://image.tmdb.org/t/p/w500/${item?.img}`}
                 alt={item?.title}
               />

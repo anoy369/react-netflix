@@ -1,6 +1,7 @@
 import React from 'react'
 import Main from '../components/main'
 import Row from '../components/row'
+import SavedShows from '../components/saved-shows'
 import requests from '../requests'
 
 const Home = () => { 
@@ -8,6 +9,7 @@ const Home = () => {
     return (
     <div>
         <Main />
+        <SavedShows />
         <Row rowID='1' title='Up Coming' fetchURL={requests.requestUpcoming} />
         <Row rowID='2' title='Popular' fetchURL={requests.requestPopular} />
         <Row rowID='3' title='Trending' fetchURL={requests.requestTrending} />
