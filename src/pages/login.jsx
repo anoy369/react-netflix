@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, Navigate } from 'react-router-dom'
 import { UserAuth } from '../context/auth-context'
 
 const Login = () => {
@@ -20,7 +20,8 @@ const Login = () => {
           setError(error.message)
       }
   }
-
+  const {user} = UserAuth();
+  if(!user) {
   return (
     <div className='w-full h-screen'>
         <img
@@ -73,6 +74,9 @@ const Login = () => {
         </div>
     </div>
   )
+  }else{
+    return <Navigate to='/' />
+  }
 }
 
 export default Login

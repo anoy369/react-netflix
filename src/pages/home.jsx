@@ -3,8 +3,9 @@ import Main from '../components/main'
 import Row from '../components/row'
 import requests from '../requests'
 
-const Home = () => {
-  return (
+const Home = () => { 
+
+    return (
     <div>
         <Main />
         <Row rowID='1' title='Up Coming' fetchURL={requests.requestUpcoming} />
@@ -13,7 +14,7 @@ const Home = () => {
         <Row rowID='4' title='Top Rated' fetchURL={requests.requestTopRated} />
         <Row rowID='5' title='Horor' fetchURL={requests.requestHorror} />
     </div>
-  )
+    )
 }
  
 export default Home

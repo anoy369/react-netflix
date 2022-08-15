@@ -1,23 +1,24 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, Navigate } from 'react-router-dom'
 import { UserAuth } from '../context/auth-context'
 
 export const Signup = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const { signUp} = UserAuth('')
+    const {signUp} = UserAuth('')
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
             await signUp(email, password);
-            navigate('/')
+            navigate('/login')
         }catch (error) {
             console.log(error)
         }
     }
-
+  const {user} = UserAuth();
+  if(!user) {
   return (
     <div className='w-full h-screen'>
         <img
@@ -66,7 +67,10 @@ export const Signup = () => {
             </div>
         </div>
     </div>
-  )
+  )  
+  }else{
+    return <Navigate to='/' />
+  }
 }
 
 export default Signup
