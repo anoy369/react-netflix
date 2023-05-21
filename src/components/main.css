@@ -1,0 +1,21 @@
+.styles-module_item-provider__YgMwz{
+    overflow: visible!important;
+    width: 100vw;
+}
+.movieSlider{
+    gap: 20px;
+}
+.styles-module_item-tracker__3bypy {
+    height: 100%;
+    display: flex;
+    gap: 20px;
+}
+.movie-item{
+    transition: all ease-in 100ms;
+}
+
+.movie-item:hover{
+    transform: scale(1.5);
+    z-index: 9;
+    transition: all ease-in 100ms;
+}

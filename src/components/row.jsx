@@ -9,6 +9,7 @@ const Row = ({ title, fetchURL, rowID }) => {
   useEffect(() => {
     axios.get(fetchURL).then((response) => {
       setMovies(response.data.results);
+      // console.log(movies);
     });
   }, [fetchURL]);
 
@@ -23,7 +24,7 @@ const Row = ({ title, fetchURL, rowID }) => {
   }
 
   return (
-    <>
+    <div className="relative">
       <h2 className="text-white font-bold md:text-xl pt-4 pb-2 pl-[4%]">{title}</h2>
       <div className="relative flex items-center group">
         <MdChevronLeft onClick={slideLeft}
@@ -43,7 +44,7 @@ const Row = ({ title, fetchURL, rowID }) => {
           size={40}
         />
       </div>
-    </>
+    </div>
   );
 };
 
