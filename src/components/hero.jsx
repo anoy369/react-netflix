@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import requests from "../requests";
+import './hero.css';
 
 const Main = () => {
   const [movies, setMovies] = useState([]);
@@ -24,7 +25,7 @@ const Main = () => {
   }
 
   return (
-    <div className="w-full h-[100vh] text-white">
+    <div className="w-full h-[100vh] text-white relative hero-section -mb-[10%]">
       <div className="w-full h-[100vh]">
         <div className="absolute w-full h-[100vh] bg-gradient-to-r from-[#141414] "></div>
         <img
@@ -33,8 +34,8 @@ const Main = () => {
           alt={movie?.title}
         />
 
-        <div className="absolute w-full top-[30%]  pl-[4%]">
-          <h1 className="text-3xl md:text-5xl font-bold text-white">{movie?.title}</h1>
+        <div className="absolute w-full top-[20%] p-4 md:p-8">
+          <h1 className="text-3xl md:text-5xl font-bold text-white w-[50%]">{movie?.title}</h1>
           <div className="my-4">
             <button className="border bg-gray-300 text-black border-gray-300 py-2 px-5">
               Play

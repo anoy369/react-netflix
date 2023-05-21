@@ -25,6 +25,7 @@ const SavedShows = () => {
   }, [user?.email]);
 
   const movieRef = doc(db, 'users', `${user?.email}`)
+  
   const deleteShow = async (passedID) => {
       try {
         const result = movies.filter((item) => item.id !== passedID)
@@ -38,6 +39,8 @@ const SavedShows = () => {
 
   return (
     <>
+    {movies && movies.length > 0 ? (
+      <>
       <h2 className='text-white font-bold md:text-xl pt-4 pb-2 pl-[4%]'>Saved Shows</h2>
       <div className='relative flex items-center group'>
         <MdChevronLeft
@@ -74,6 +77,8 @@ const SavedShows = () => {
           size={40}
         />
       </div>
+      </>
+    ):(<div></div>)};
     </>
   );
 };
